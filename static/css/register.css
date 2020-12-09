@@ -1,0 +1,134 @@
+body,html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			font-family: 'EB Garamond', serif;
+
+		}
+		
+		.user_card {
+			width: 400px;
+			margin-top: auto;
+			margin-bottom: auto;
+			/*margin-left: 52rem;*/
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+		}
+
+		.form_container {
+			margin-top: 20px;
+			width: 400px;
+		}
+
+		#form-title{
+			color: #fff;
+		}
+		.input-text{
+			width: 300px;
+			height: 60px;
+		}
+		a{
+			color: white;
+			border-radius: 5px;
+			text-align: center;
+		}
+		.lgn:hover{
+			text-decoration: none;
+			text-align: center;
+			background-color: white;
+			color: black;
+		}
+		a:hover{
+			text-decoration: none;
+			color: black;
+		}
+		.alr {
+			text-align: center;
+			justify-content: center;
+		}
+		.lgn{
+			width: 145px;
+			height: 35px;
+			color: black;
+			background-color:#6600cc;
+			justify-content: center;
+			text-align: center;
+			border-radius: 5px;
+			margin:auto;
+			margin-top: 0.61rem;
+			padding: 2px;
+		}
+		.btn{ 
+			background-color:#660066;
+			color: white; 
+		}
+		.btn:hover{
+			background-color:white;
+			color: black; 
+		}
+		#login {
+			width: 145px;
+			height: 35px;
+			color: black;
+			background-color:#660066;
+			justify-content: center;
+			text-align: center;
+			border-radius: 5px;
+			margin:auto;
+			margin-top: 0.61rem;
+			padding: 2px;
+		}
+		#login:hover{
+			background-color: white;
+			color: black;
+		}
+	
+	 /*Small devices (landscape phones, 576px and up)*/	
+@media (min-width: 576px) { 
+	.user_card {
+			width: 400px;
+			margin-top: auto;
+			margin-bottom: auto;	
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+		}
+ }
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+	.user_card {
+			width: 400px;
+			margin-top: auto;
+			margin-bottom: auto;
+			
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+		}
+	 }
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { }
+
+ /*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { ... }

@@ -1,0 +1,1 @@
+web: gunicorn bandsbank.wsgi --log-file -

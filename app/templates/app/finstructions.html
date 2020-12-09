@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block head-meta %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale = 1.0">
+	<meta http-equiv="X-UA-Compaatible" content="ie=edge">
+  {% endblock %}
+
+  {% block head-css %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css">
+	<!-- Favicon -->
+	<link href="{% static "images/Untitled-2.png" %} " rel="shortcut icon"/>
+	
+  {% endblock %}
+
+  {% block head-title %}
+	<title>Instructions</title>
+  {% endblock %}
+</head>
+<style type="text/css">
+	
+</style>
+<body>
+	<header class="container-fluid  mb-4 pt-4">
+		<div class="row">
+			<div class="site-logo col-md-10  col-sm-8 col-xs-10 mb-2">
+				<img src="{% static "images/Untitled-3.png" %}" style="height:70px;width:120px;">
+			</div>
+			<div class="header-right col-md-2  col-sm-4 col-xs-2 ">
+				<div class="user-panel" style="color:white;">
+					<p>Hello,{{request.user}} <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a></p> 	
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container">	
+			<div class="jumbotron jumbotron-fluid">
+  				<div class="container">
+    				<h1 class="display-4">Ready to take the quiz?!</h1>
+    				<p class="lead">Read the instructions carefully to take the quiz</p>
+  				</div>
+			</div>
+			<div>
+				<ul>
+					<li>There are 5 questions regarding particular instrument</li>
+					<li>Each question carries 10 marks</li>
+					<li>The list of bands shown after you have taken the quiz depends on your score</li>
+					<li>If your score is 50,list of top bands are shown</li>
+					<li>If your score lies between 40 and 50, high rated bands are shown</li>
+					<li>If your score lies between 20 and 40, medium rated bands are shown</li>
+					<li>You will have to retake the quiz if your score is less than 20</li>
+					<li>Do not refresh the page or go back while taking quiz.This will result in starting the quiz from first</li>
+					<li>ALL THE BEST</li>
+				</ul>
+			</div>
+			<a href="{% url 'fluteQuiz' %}" class="btn btn-primary mb-4">Start Test</a>
+	</div>
+</body>
+<style type="text/css">
+	body,html{
+  		font-family: 'EB Garamond', serif;
+  		background: url({% static "images/2559.png" %});
+	}
+	/*.header-section {
+	padding-left: 55px;
+	padding-right: 72px;
+	
+	height: 70px;
+	}
+	.header-section h1 {
+		color: white;
+		font-size: 20px;
+	}
+	.header-right .user-panel p {
+		font-size: 16px;
+		color: #ffffff;
+		margin: 10 10px;
+	}
+	.site-logo {
+		display: inline-block;
+		padding: 0;
+		padding: 4px;
+	}
+	.header-right {
+		float: right;
+		padding: 14px 0;
+		margin-left: 100px;
+	}
+	.header-right .user-panel {
+		display: inline-block;
+	}
+
+	.header-right .user-panel a {
+		font-size: 16px;
+		color: #ffffff;
+		margin: 0 10px;
+	}*/
+	ul{
+		color: white;
+	}
+	.btn {
+		background-color: #660066;
+		color: white;
+		border: none;
+		border-radius: 0px;
+	}
+	.btn:hover {
+		background-color: #660066;
+		color: white;
+	}
+	@media (min-width: 576px) {
+		.jumbotron {
+	    	 padding: 2rem; 
+		}
+	}
+</style>
+</html>

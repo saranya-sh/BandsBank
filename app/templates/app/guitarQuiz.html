@@ -1,0 +1,212 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block head-meta %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale = 1.0">
+  <meta http-equiv="X-UA-Compaatible" content="ie=edge">
+  {% endblock %}
+
+  {% block head-css %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css">
+  <!-- Favicon -->
+ <link href="{% static "images/Untitled-2.png" %} " rel="shortcut icon"/>
+  
+  {% endblock %}
+
+  {% block head-title %}
+  <title>Quiz</title>
+  {% endblock %}
+</head>
+  <body>
+   <header class="container-fluid  mb-4 pt-4">
+    <div class="row">
+      <div class="site-logo col-md-10  col-sm-8 col-xs-10 mb-2">
+        <img src="{% static "images/Untitled-3.png" %}" style="height:70px;width:120px;">
+      </div>
+      <div class="header-right col-md-2  col-sm-4 col-xs-2 ">
+        <div class="user-panel" style="color:white;">
+          <p>Hello,{{request.user}} <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a></p>   
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container"  id="Quizcontainer">
+    <div class="row">
+      <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+        <div class="title"><h1>Guitar Quiz</h1></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+        <div class="question" id="question"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+        <label class="option"><input type="radio" name="option" value="1"/><span id="opt1"></span></label>
+        <label class="option"><input type="radio" name="option" value="2"/><span id="opt2"></span></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+        <label class="option"><input type="radio" name="option" value="3"/><span id="opt3"></span></label>
+        <label class="option"><input type="radio" name="option" value="4"/><span id="opt4"></span></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8"></div>
+      <div class="col-lg-4">
+        <button id="nextButton" class="next-btn" onclick="loadNextQuestion()">Next Question</button>
+      </div>  
+    </div>  
+  </div>
+  <div id="result" class="container result mb-5" style="display:none;"></div>
+  <div id="answers" class="container answers mb-5" style="display:none;color:white;"></div>
+  
+  <div class="container1">
+    <div id="letsgo" class="btn go mb-5" style="display:none;"><a href="{% url 'guitartopbands' %}">Go</a></div>
+    <div id="letsgo1" class="btn go1 mb-5" style="display:none;"><a href="{% url 'guitarmediumbands' %}">Go</a></div>
+    <div id="letsgo2" class="btn go2 mb-5" style="display:none;"><a href="{% url 'guitarlowbands' %}">Go</a></div>
+    <div id="letsgo3" class="btn go3 mb-3" style="display:none;"><a href="{% url 'guitarQuiz' %}">Retake quiz</a></div>
+  </div>
+  <p id="msg" class="msg container1" style="display:none;">Oops, You failed!</p>
+  
+ </body>
+ <script type="text/javascript" src={% static "js/guitarQuiz.js" %}></script>
+ <script type="text/javascript" src={% static "js/quiz.js" %}></script>
+  
+ <style type="text/css">
+      h1{
+    color: #fff;
+    text-align: center;
+  }
+  body {
+    font-family: 'EB Garamond', serif;
+      background: url({% static "images/2559.png" %});
+ 
+  }
+  #results {
+    color:white;
+  }
+  .container{
+    margin-top: 50px;
+    padding: 20px;
+    border:1px solid #fff;
+    box-shadow: 0 0 8px 3px #660056;
+  }
+  .container1{
+    height: 80px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin:auto;
+    color: white;
+    justify-content: center;
+    text-align: center;
+  }
+  .question{
+    padding: 20px;
+    font-size: 22px;
+    border:1px solid #660056;
+    border-radius: 10px;
+    margin: 10px 0 10px 0;
+    color: #fff;
+  }
+  .option{
+    width: 440px;
+    display: inline-block;
+    padding: 10px 0 10px 15px;
+    vertical-align: middle;
+    background: #660056;
+    margin: 10px 0 10px 10px;
+    color: #fff;
+    border-radius: 10px;
+  }
+  .option:hover{
+    background: #fff;
+    color: #660056;
+  }
+  .next-btn{
+    border:none;
+    outline:none;
+    background:#660056;
+    width:160px;
+    height:35px;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+    margin:10px;
+  }
+  .next-btn:hover{
+    background: #fff;
+    color: #660056;
+  }
+  .result{
+    height: 100px;
+    text-align: center;
+    font-size: 55px;
+  }
+  .option input:checked .option{
+    background: #fff;
+    color: #660056;
+  }
+
+  .btn{
+    color: white;
+    background-color:#660056;
+    border:none;
+  }
+  a:hover {
+    text-decoration: none;
+    color:white;
+  }
+  a{
+    color: white;
+  }
+  .btn:hover{
+    background-color:#660056;
+    border:none;
+  }
+  .result {
+    color: white;
+  }
+  /*.header-section {
+  padding-left: 55px;
+  padding-right: 72px;
+  
+  height: 70px;
+  }
+  
+  .header-right .user-panel p {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 10 10px;
+  }
+  .site-logo {
+    display: inline-block;
+    padding: 0;
+    padding: 4px;
+  }
+  .header-right {
+    float: right;
+    padding: 14px 0;
+    margin-left: 100px;
+  }
+  .header-right .user-panel {
+    display: inline-block;
+  }
+
+  .header-right .user-panel a {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0 10px;
+  }*/
+
+ </style>
+ </html>
